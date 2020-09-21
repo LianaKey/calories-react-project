@@ -19,3 +19,18 @@
 .mt1 {
   margin-top: 1rem;
 }
+
+.small-red {
+  color: #F44336;
+  font-size: 16px;
+}
+
+.to-right {
+  display: block;
+  text-align: right;
+}
+
+.close-icon {
+  float: right;
+  cursor: pointer;
+}
