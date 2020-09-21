@@ -13,6 +13,12 @@ import { Dishes } from "./data/data"
 
 const store = createStore(rootReducer, Dishes)
 
+declare global {
+  interface Window { store: any; }
+}
+
+window.store = store
+
 const App: React.FC = () => {
   return (
     <Provider store={store}>

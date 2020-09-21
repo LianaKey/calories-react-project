@@ -1,21 +1,30 @@
 import React from 'react'
 import Card from './Card'
 import LargeForm from './CalcForm'
+import {connect} from 'react-redux'
 
-let cardlist:any[] = []
+interface IDish {
+    title: string;
+    calories: string;
+    description: string;
+    photo: string;
+    recommend: string;
+}
+  
 
+interface IDishes {
+    dishes: IDish[]
+}
 
-const CardList:React.FC = () => {
-
-        for (let i:number = 0; i < 10; i++) {
-            cardlist.push(<Card key={i} />)
-        }
-
+const CardList:React.FC<IDishes> = (props:IDishes) => {
+        console.log(props.dishes)
         return (
             <div className="row">
                 <div className="col s6 m6 cardlist flexlist mt1">
-                <h3 className="header" >Dishes and products</h3>
-                    {cardlist}
+                    <h3 className="header" >Dishes and products</h3>
+                    {props.dishes.map((item, i) => {
+                        return (<Card {...item} key={i}/>)
+                    })}
                 </div>
                 <div className="col s6 m6 cardlist flexlist mt1">
                     <h3 className="header">Count here</h3>
@@ -25,4 +34,8 @@ const CardList:React.FC = () => {
         )
 }
 
-export default CardList
+const mapStateToProps = (state:any) => ({
+    dishes: state
+})
+
+export default connect(mapStateToProps)(CardList)

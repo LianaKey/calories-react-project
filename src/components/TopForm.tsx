@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CaloriesForm:React.FC = () => (
+const TopForm:React.FC = () => (
     <div className="row">
             <div className="input-field">
                 Please write your average waste of calories per day
@@ -9,4 +9,4 @@ const CaloriesForm:React.FC = () => (
     </div>
 )
 
-export default CaloriesForm
+export default TopForm

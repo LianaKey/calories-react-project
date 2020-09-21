@@ -24,7 +24,7 @@ export const Dishes = [
       title: "Fried shrimps",
       calories: "277",
       description: "Fried shrimp or fried prawn is deep-fried shrimp and prawns.",
-      photo: "shrimps.jpg",
+      photo: "shrimps.jpeg",
       recommend: "false",
     },
     {
