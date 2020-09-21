@@ -1,44 +1,38 @@
 export const Dishes = [
     {
-      title: "Paperonny Pizza",
+      title: "Pepperoni pizza",
       calories: "350",
-      description: "22.76 USD",
-      photo: "5 sec ago",
-      recommend: 'false'
+      description: "Easy pizza crust, pizza crust yeast, pepperoni, quick pizza",
+      photo: "pizza.jpg",
+      recommend: "false",
     },
     {
       title: "Fried Potatos",
-      calories: "288",
-      description: "45.28 USD",
-      photo: "10 sec ago",
-      recommend: 'false'
+      calories: "312",
+      description: "French fries, or simply fries, chips, finger chips, or French-fried potatoes, are batonnet or allumette-cut deep-fried potatoes.",
+      photo: "potato.jpg",
+      recommend: "false",
     },
     {
-      title: "Salad",
-      calories: "SHOP",
-      description: "341.79 USD",
-      photo: "3 sec ago",
-      recommend: 'true'
+      title: "Mixed Salad Greens",
+      calories: "9",
+      description: "5 cups loosely packed mixed greens or any favorite lettuce 5 cups loosely packed mixed greens or any favorite lettuce",
+      photo: "salad.jpg",
+      recommend: "true"
     },
     {
-      title: "Sunrun Inc",
-      calories: "RUN",
-      description: "9.87 USD",
-      photo: "4 sec ago",
-      recommend: 'false'
+      title: "Fried shrimps",
+      calories: "277",
+      description: "Fried shrimp or fried prawn is deep-fried shrimp and prawns.",
+      photo: "shrimps.jpg",
+      recommend: "false",
     },
     {
-      title: "Adobe Inc",
-      calories: "ADBE",
-      description: "300.99 USD",
-      photo: "10 sec ago",
-      recommend: 'false'
+      title: "Coffee without sugar",
+      calories: "0",
+      description: "Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species.",
+      photo: "coffee.jpg",
+      recommend: "false",
     },
-    {
-      title: "HubSpot Inc",
-      calories: "HUBS",
-      description: "115.22 USD",
-      photo: "12 sec ago",
-      recommend: 'false'
-    },
+
   ];
