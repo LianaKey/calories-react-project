@@ -1,0 +1,2 @@
+export const ADD_TO_CALC = 'DISH/ADD_TO_CALC'
+export const REMOVE_FROM_CALC = 'DISH/REMOVE_FROM_CALC'

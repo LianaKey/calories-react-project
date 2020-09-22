@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 
 interface IDish {
     title: string;
-    calories: string;
+    calories: number;
     description: string;
     photo: string;
     recommend: string;
