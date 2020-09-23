@@ -42,5 +42,11 @@ export const data = {
     },
 
   ],
-  dayLimit: 0
+  dayLimit: 0,
+  message: {
+    itemAdded: "New item succesfully added!",
+    itemDeleted: "Item successfully deleted!",
+    limitReached: "<p class='red-text text-darken-2 f20'>Can't add new item, you reached your calories limit!</p>",
+    limitChanged: "Limit was changed!"
+  }
 }

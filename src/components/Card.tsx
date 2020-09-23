@@ -14,21 +14,27 @@ interface IDish {
 }
 
 let val:string = 'add';
+let color:string = 'blue';
 
 const Card = (props:IDish) => {
 
     if (props.calculated === true) {
         val = 'remove';
+        color = 'red';
     } else {
         val = 'add';
+        color = 'blue';
     }
+
+    let defaultClass:string = 'btn-floating halfway-fab waves-effect waves-light';
+    let classList:string = defaultClass.concat(' ', color);
 
     return(
         <div className="card col2">
             <div className="card-image">
                 <img src={require(`./../assets/img/${props.photo}`)} alt={props.title} />
                 <span className="card-title">{props.title}</span>
-                <a className="btn-floating halfway-fab waves-effect waves-light red" onClick={()=>{props.addCalc(props.title)}}>
+                <a className={classList} onClick={()=>{props.addCalc(props.title)}}>
                 <i className="material-icons">{val}</i>
                 </a>
             </div>

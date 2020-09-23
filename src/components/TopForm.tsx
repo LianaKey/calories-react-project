@@ -18,7 +18,7 @@ class TopForm extends React.Component<ILimit> {
             <div className="row">
                 <div className="input-field">
                     Please write your average waste of calories per day
-                    <input id="text" type="text" className="validate" placeholder="2400 for men, and 2000 for women" onChange={(event)=>{this.props.changeLimit(event.target.value)}} value={this.props.dayLimit || ''}/>
+                    <input id="text" type="text" className="validate" placeholder="2400 for men, and 2000 for women" maxLength = {4} onChange={(event)=>{this.props.changeLimit(event.target.value)}} value={this.props.dayLimit || ''} />
                 </div>
             </div>
         )}

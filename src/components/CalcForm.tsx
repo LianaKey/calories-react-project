@@ -28,9 +28,10 @@ const LargeForm:React.FC<IDishes> = (props:IDishes) => (
             }
         </ul>
         <div className="row margin0 total ">
-        <span className="to-left">Your day limit: <strong className="f20">{props.dayLimit}</strong></span>
+            <span className="to-left">Your day limit: <strong className="f20">{props.dayLimit}</strong></span>
             <span className="to-right">In total: <strong className="f20">{props.calc()}</strong> calories.</span>
         </div>
+        <div id="informer"></div>
     </div>
 )
 
