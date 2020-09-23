@@ -1,4 +1,5 @@
-export const data = [
+export const data = {
+  dishes: [
     {
       title: "Pepperoni pizza",
       calories: 350,
@@ -40,4 +41,6 @@ export const data = [
       calculated: false
     },
 
-  ];
+  ],
+  dayLimit: 0
+}

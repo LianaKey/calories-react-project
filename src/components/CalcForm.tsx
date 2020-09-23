@@ -11,6 +11,7 @@ interface IDish {
 
 interface IDishes {
     dishes: IDish[]
+    dayLimit: number
     calc: Function
 }
 
@@ -27,17 +28,18 @@ const LargeForm:React.FC<IDishes> = (props:IDishes) => (
             }
         </ul>
         <div className="row margin0 total ">
-            <span className="to-left">Your day limit: <strong className="f20">0</strong></span>
+        <span className="to-left">Your day limit: <strong className="f20">{props.dayLimit}</strong></span>
             <span className="to-right">In total: <strong className="f20">{props.calc()}</strong> calories.</span>
         </div>
     </div>
 )
 
 const mapStateToProps = (state:any) => ({
-    dishes: state,
+    dishes: state.dishes,
+    dayLimit: state.dayLimit,
     calc: function(){
         let summ = 0
-        state.map((item:any) => (item.calculated) ? summ = summ + item.calories: '')
+        this.dishes.map((item:any) => (item.calculated) ? summ = summ + item.calories: '')
         console.log()
         return summ
     }

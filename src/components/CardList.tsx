@@ -35,7 +35,7 @@ const CardList:React.FC<IDishes> = (props:IDishes) => {
 }
 
 const mapStateToProps = (state:any) => ({
-    dishes: state
+    dishes: state.dishes
 })
 
 export default connect(mapStateToProps)(CardList)
