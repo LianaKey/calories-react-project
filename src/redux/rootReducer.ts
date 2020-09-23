@@ -20,7 +20,7 @@ interface IDishes {
 }
 
 // --- Checks if calories reached limit ---
-function checkLimit(limit:number, dishes:IDish[], item:IDish, message: IMessage){
+function checkLimit(limit:number, dishes:IDish[], item:IDish, message: IMessage):void{
     let summ = 0
     dishes.map((item:any) => (item.calculated) ? summ = summ + item.calories: '')
 
