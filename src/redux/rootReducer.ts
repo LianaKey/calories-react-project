@@ -1,8 +1,8 @@
-import {ADD_TO_CALC} from './types'
+import {TOGGLE_ITEM} from './types'
 import {combineReducers} from 'redux'
 import { Reducer } from 'react'
 
-interface IDishh {
+interface IDish {
     title: string;
     calories: number;
     description: string;
@@ -11,14 +11,14 @@ interface IDishh {
     calculated: boolean;
 }
 
-export const rootReducer = (state: IDishh[] = [], action?:any):any => {
+export const rootReducer = (state: IDish[] = [], action?:any):IDish[] => {
     switch (action.type) {
-        case ADD_TO_CALC:
-            let new_array = [...state]
-            new_array.map((item) => 
+        case TOGGLE_ITEM:
+            let new_state = [...state]
+            new_state.map((item) => 
                 (item.title === action.name) ? item.calculated ? item.calculated = false : item.calculated = true : ''
             );
-            return new_array
+            return new_state
         default:
             return state
     }

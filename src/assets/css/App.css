@@ -26,8 +26,19 @@
 }
 
 .to-right {
-  display: block;
-  text-align: right;
+  float: right;
+}
+
+.to-left {
+  float: left;
+}
+
+.margin0 {
+  margin: 0 auto!important;
+}
+
+.f20 {
+  font-size: 20px;
 }
 
 .close-icon {
@@ -52,4 +63,8 @@
   align-items: center;
   color: black;
   font-size: 20px;
+}
+
+.pointer {
+  cursor: pointer;
 }

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import {connect} from 'react-redux'
-import {addToCalc} from '../redux/actions'
+import {toggleItem} from '../redux/actions'
 
 interface IDish {
     title: string;
@@ -43,7 +43,7 @@ const Card = (props:IDish) => {
 const mapDispatchToProps = (dispatch:any) => ({
     addCalc(name:string) {
         return (
-            dispatch(addToCalc(name))
+            dispatch(toggleItem(name))
         )
     }
 })

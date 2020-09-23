@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {CalcItem} from './CalcItem'
+import CalcItem from './CalcItem'
 
 interface IDish {
     title: string;
@@ -23,11 +23,13 @@ const LargeForm:React.FC<IDishes> = (props:IDishes) => (
                 if(item.calculated){
                     return(<CalcItem {...item} key={i} />)
                 }
-                
             })
             }
         </ul>
-        <span className="to-right">In total: <strong>{props.calc()}</strong> calories.</span>
+        <div className="row margin0 total ">
+            <span className="to-left">Your day limit: <strong className="f20">0</strong></span>
+            <span className="to-right">In total: <strong className="f20">{props.calc()}</strong> calories.</span>
+        </div>
     </div>
 )
 

@@ -1,14 +1,8 @@
-import {ADD_TO_CALC, REMOVE_FROM_CALC} from './types'
+import {TOGGLE_ITEM} from './types'
 
-export function addToCalc(name:string){
+export function toggleItem(name:string){
     return {
-        type: ADD_TO_CALC,
+        type: TOGGLE_ITEM,
         name: name
-    }
-}
-
-export function removeFromCalc(){
-    return {
-        type: REMOVE_FROM_CALC
     }
 }
