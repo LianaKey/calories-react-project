@@ -1,6 +1,6 @@
 import React from "react"
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import {createStore} from 'redux'
+import {createStore, compose} from 'redux'
 import {Provider} from 'react-redux'
 
 import './assets/css/App.css'
@@ -9,9 +9,11 @@ import InfoPage from './pages/InfoPage'
 import MorePage from './pages/MorePage'
 import Navigation from './components/Navigation'
 import { rootReducer } from "./redux/rootReducer"
-import { Dishes } from "./data/data"
+import { data } from "./data/data"
 
-const store = createStore(rootReducer, Dishes)
+const store = createStore(rootReducer, data,
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+  )
 
 declare global {
   interface Window { store: any; }

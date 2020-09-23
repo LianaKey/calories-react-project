@@ -8,8 +8,8 @@ class CalcPage extends React.Component  {
       return(
         <div className="calc">
             <Title />
-            <CardList />
             <TopForm />
+            <CardList />
         </div>
       )
     }

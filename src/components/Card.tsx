@@ -8,20 +8,28 @@ interface IDish {
     calories: number;
     description: string;
     photo: string;
-    recommend: string;
+    recommend: boolean;
+    calculated: boolean;
+    addCalc: Function;
 }
 
-
+let val:string = 'add';
 
 const Card = (props:IDish) => {
+
+    if (props.calculated === true) {
+        val = 'remove';
+    } else {
+        val = 'add';
+    }
 
     return(
         <div className="card col2">
             <div className="card-image">
                 <img src={require(`./../assets/img/${props.photo}`)} alt={props.title} />
                 <span className="card-title">{props.title}</span>
-                <a className="btn-floating halfway-fab waves-effect waves-light red" onClick={()=>{}}>
-                    <i className="material-icons">add</i>
+                <a className="btn-floating halfway-fab waves-effect waves-light red" onClick={()=>{props.addCalc(props.title)}}>
+                <i className="material-icons">{val}</i>
                 </a>
             </div>
             <div className="card-content">
@@ -33,7 +41,12 @@ const Card = (props:IDish) => {
 }
 
 const mapDispatchToProps = (dispatch:any) => ({
+    addCalc(name:string) {
+        return (
+            dispatch(addToCalc(name))
+        )
+    }
 })
 
-// export default connect(null, mapDispatchToProps)(Card)
-export default Card
+export default connect(null, mapDispatchToProps)(Card)
+// export default Card

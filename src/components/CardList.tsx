@@ -8,7 +8,8 @@ interface IDish {
     calories: number;
     description: string;
     photo: string;
-    recommend: string;
+    recommend: boolean;
+    calculated: boolean;
 }
   
 
@@ -17,7 +18,6 @@ interface IDishes {
 }
 
 const CardList:React.FC<IDishes> = (props:IDishes) => {
-        console.log(props.dishes)
         return (
             <div className="row">
                 <div className="col s6 m6 cardlist flexlist mt1">

@@ -46,3 +46,10 @@
   border-bottom: 1px solid;
   display: block;
 }
+
+.collection .secondary-content {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+}

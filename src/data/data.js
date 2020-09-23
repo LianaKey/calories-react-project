@@ -1,4 +1,4 @@
-export const Dishes = [
+export const data = [
     {
       title: "Pepperoni pizza",
       calories: 350,
