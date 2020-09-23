@@ -1,6 +1,6 @@
 import React from "react"
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import {createStore, compose} from 'redux'
+import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
 import './assets/css/App.css'
