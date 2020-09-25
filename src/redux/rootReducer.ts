@@ -31,6 +31,7 @@ function checkLimit(limit:number, dishes:IDish[], item:IDish, message: IMessage)
             return
         }
     }
+
     M.toast({html: message.itemAdded})
 }
 
@@ -50,7 +51,6 @@ export const rootReducer = (state: IDishes = {dishes:[], dayLimit:0, message:{}}
                 }
                 return item
             })
-            
             return Object.assign({}, state, {
                 dishes: new_dishes
             })
