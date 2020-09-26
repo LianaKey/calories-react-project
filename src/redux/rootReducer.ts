@@ -1,32 +1,25 @@
 import {TOGGLE_ITEM, CHANGE_LIMIT} from './types'
-
-interface IDish {
-    title: string;
-    calories: number;
-    description: string;
-    photo: string;
-    recommend: boolean;
-    calculated: boolean;
-}
+import {IDish} from '../interfaces/dishes'
+import M from 'materialize-css';
 
 interface IMessage {
     [key: string]: string
 }
 
-interface IDishes {
+interface IState {
     dishes: IDish[];
     dayLimit: number;
     message: IMessage;
 }
 
 // --- Checks if calories reached limit ---
-function checkLimit(limit:number, dishes:IDish[], item:IDish, message: IMessage):void{
+function checkLimit(limit:number, dishes:IDish[], item:IDish, message: IMessage):void {
     let summ = 0
-    dishes.map((item:any) => (item.calculated) ? summ = summ + item.calories: '')
+    dishes.map((item:any) => (item.calculated) ? summ = summ + item.calories : '')
 
-    if(limit < summ && limit) {
+    if (limit < summ && limit) {
         item.calculated = false
-        if(document.querySelector('#informer')){
+        if (document.querySelector('#informer')) {
             M.toast({html: message.limitReached})
             return
         }
@@ -35,19 +28,15 @@ function checkLimit(limit:number, dishes:IDish[], item:IDish, message: IMessage)
     M.toast({html: message.itemAdded})
 }
 
-export const rootReducer = (state: IDishes = {dishes:[], dayLimit:0, message:{}}, action?:any):IDishes => {
+export const rootReducer = (state: IState = { dishes: [], dayLimit: 0, message: {} }, action?: any): IState => {
     switch (action.type) {
         case TOGGLE_ITEM:
-            let new_dishes = [...state.dishes]
+            const new_dishes = [...state.dishes]
             new_dishes.map((item) => {
-                if(item.title === action.name){
-                    if(item.calculated){
-                        item.calculated = false
-                        M.toast({html: state.message.itemDeleted})
-                    } else {
-                        item.calculated = true;
-                        checkLimit(state.dayLimit, new_dishes, item, state.message);
-                    }
+                if (item.title === action.payload) {
+                    if (item.calculated) { M.toast({ html: state.message.itemDeleted }) }
+                    item.calculated = !item.calculated
+                    checkLimit(state.dayLimit, new_dishes, item, state.message);
                 }
                 return item
             })

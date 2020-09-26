@@ -1,21 +1,8 @@
 import React from 'react'
 import Card from './Card'
-import LargeForm from './CalcForm'
-import {connect} from 'react-redux'
-
-interface IDish {
-    title: string;
-    calories: number;
-    description: string;
-    photo: string;
-    recommend: boolean;
-    calculated: boolean;
-}
-  
-
-interface IDishes {
-    dishes: IDish[]
-}
+import LargeForm from './../calculator/CalcForm'
+import { connect } from 'react-redux'
+import { IDishes } from '../../interfaces/dishes'
 
 const CardList:React.FC<IDishes> = (props:IDishes) => {
         return (

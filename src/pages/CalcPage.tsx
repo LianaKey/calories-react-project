@@ -1,5 +1,5 @@
 import React from 'react'
-import CardList from '../components/CardList'
+import CardList from '../components/card/CardList'
 import TopForm from '../components/TopForm'
 import Title from '../components/Title'
 

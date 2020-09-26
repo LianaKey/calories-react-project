@@ -20,9 +20,7 @@ const LargeForm:React.FC<IDishes> = ({dishes, calc, dayLimit}) => (
     <div className="col s12">
         <ul className="collection">
             {dishes.map((item, i) => {
-                if(item.calculated){
-                    return(<CalcItem {...item} key={i} />)
-                }
+                return (item.calculated) ? <CalcItem {...item} key={i} /> : ''
             })}
         </ul>
         <div className="row margin0 total">

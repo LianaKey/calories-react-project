@@ -1,24 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import {connect} from 'react-redux'
-import {toggleItem} from '../redux/actions'
-
-interface IDish {
-    title: string;
-    calories: number;
-    description: string;
-    photo: string;
-    recommend: boolean;
-    calculated: boolean;
-    addCalc: Function;
-}
+import {toggleItem} from '../../redux/actions'
+import {IDish} from '../../interfaces/dishes'
 
 let val:string = 'add';
 let color:string = 'blue';
 
-const Card = (props:IDish) => {
+const Card = (props:IDish & { addCalc: Function }) => {
 
-    if (props.calculated === true) {
+    if (props.calculated) {
         val = 'remove';
         color = 'red';
     } else {
@@ -29,12 +20,12 @@ const Card = (props:IDish) => {
     let defaultClass:string = 'btn-floating halfway-fab waves-effect waves-light';
     let classList:string = defaultClass.concat(' ', color);
 
-    return(
+    return (
         <div className="card col2">
             <div className="card-image">
-                <img src={require(`./../assets/img/${props.photo}`)} alt={props.title} />
+                <img src={ require(`../../assets/img/${props.photo}`) } alt={props.title} />
                 <span className="card-title">{props.title}</span>
-                <a className={classList} onClick={()=>{props.addCalc(props.title)}}>
+                <a className={classList} onClick={()=>{ props.addCalc(props.title) }}>
                 <i className="material-icons">{val}</i>
                 </a>
             </div>

@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
+import 'materialize-css/dist/css/materialize.min.css';
 import './assets/css/App.css'
 import CalcPage from './pages/CalcPage'
 import InfoPage from './pages/InfoPage'
@@ -12,14 +13,8 @@ import { rootReducer } from "./redux/rootReducer"
 import { data } from "./data/data"
 
 const store = createStore(rootReducer, data,
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+    (window as any).__REDUX_DEVTOOLS_EXTENSION_ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
   )
-
-declare global {
-  interface Window { store: any; }
-}
-
-window.store = store
 
 const App: React.FC = () => {
   return (
