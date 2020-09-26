@@ -14,18 +14,19 @@ interface IState {
 
 // --- Checks if calories reached limit ---
 function checkLimit(limit:number, dishes:IDish[], item:IDish, message: IMessage):void {
-    let summ = 0
-    dishes.map((item:any) => (item.calculated) ? summ = summ + item.calories : '')
+
+    let summ = dishes.reduce(function(total, dish):number{
+        return (dish.calculated) ? ( total + dish.calories ) : total
+    }, 0);
 
     if (limit < summ && limit) {
         item.calculated = false
-        if (document.querySelector('#informer')) {
-            M.toast({html: message.limitReached})
-            return
-        }
+        M.toast({html: message.limitReached})
+    } else {
+        M.toast({html: message.itemAdded})
     }
-
-    M.toast({html: message.itemAdded})
+    
+    
 }
 
 export const rootReducer = (state: IState = { dishes: [], dayLimit: 0, message: {} }, action?: any): IState => {

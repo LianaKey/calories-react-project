@@ -1,4 +1,16 @@
 export const data = {
+  calc_options: {
+    man: {
+      active: 2400,
+      average: 2200,
+      lazy: 1800,
+    },
+    woman: {
+      active: 2000,
+      average: 1800,
+      lazy: 1600,
+    }
+  },
   dishes: [
     {
       id: "0",
@@ -48,6 +60,7 @@ export const data = {
 
   ],
   dayLimit: 0,
+  totalCalories:0,
   message: {
     itemAdded: "New item succesfully added!",
     itemDeleted: "Item successfully deleted!",
