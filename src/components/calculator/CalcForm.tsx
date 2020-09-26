@@ -20,7 +20,6 @@ const LargeForm:React.FC<IState> = ({dishes, calc, dayLimit}) => (
             <span className="to-left">Your day limit: <strong className="f20">{dayLimit}</strong></span>
             <span className="to-right">In total: <strong className="f20">{calc()}</strong> calories.</span>
         </div>
-        <div id="informer"></div>
     </div>
 )
 
