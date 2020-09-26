@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {changeLimit} from '../redux/actions'
+import {changeLimit} from '../../redux/actions'
 
 interface ILimit {
     dayLimit?: number

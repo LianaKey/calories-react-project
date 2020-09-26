@@ -13,8 +13,7 @@ const CardList:React.FC<IDishes> = (props:IDishes) => {
                         return (<Card {...item} key={i}/>)
                     })}
                 </div>
-                <div className="col s12 m6 cardlist flexlist mt1">
-                    <h3 className="header">Count here</h3>
+                <div className="col s12 m6 cardlist flexlist mt7">
                     <LargeForm />
                 </div>
             </div>
