@@ -1,33 +1,6 @@
 import {TOGGLE_ITEM, CHANGE_LIMIT} from './types'
-import {IDish} from '../interfaces/dishes'
-import M from 'materialize-css';
-
-interface IMessage {
-    [key: string]: string
-}
-
-interface IState {
-    dishes: IDish[];
-    dayLimit: number;
-    message: IMessage;
-}
-
-// --- Checks if calories reached limit ---
-function checkLimit(limit:number, dishes:IDish[], item:IDish, message: IMessage):void {
-
-    let summ = dishes.reduce(function(total, dish):number{
-        return (dish.calculated) ? ( total + dish.calories ) : total
-    }, 0);
-
-    if (limit < summ && limit) {
-        item.calculated = false
-        M.toast({html: message.limitReached})
-    } else {
-        M.toast({html: message.itemAdded})
-    }
-    
-    
-}
+import {checkLimit} from '../utils/checklimit'
+import {IState} from '../interfaces/reducers'
 
 export const rootReducer = (state: IState = { dishes: [], dayLimit: 0, message: {} }, action?: any): IState => {
     switch (action.type) {
@@ -37,7 +10,7 @@ export const rootReducer = (state: IState = { dishes: [], dayLimit: 0, message: 
                 if (item.title === action.payload) {
                     if (item.calculated) { M.toast({ html: state.message.itemDeleted }) }
                     item.calculated = !item.calculated
-                    checkLimit(state.dayLimit, new_dishes, item, state.message);
+                    checkLimit(state.dayLimit, new_dishes, item, state.message)
                 }
                 return item
             })
