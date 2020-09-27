@@ -1,5 +1,5 @@
 export interface IDish {
-    id: number | string;
+    id: number;
     title: string;
     calories: number;
     description: string;

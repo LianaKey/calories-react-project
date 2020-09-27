@@ -16,6 +16,7 @@ const store = createStore(rootReducer, data,
     (window as any).__REDUX_DEVTOOLS_EXTENSION_ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
   )
 
+
 const App: React.FC = () => {
   return (
     <Provider store={store}>
