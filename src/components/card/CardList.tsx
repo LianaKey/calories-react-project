@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Card'
-import LargeForm from './../calculator/CalcForm'
+import { LargeForm } from './../calculator/CalcForm'
 import { connect } from 'react-redux'
 import { IDishes } from '../../interfaces/dishes'
 
