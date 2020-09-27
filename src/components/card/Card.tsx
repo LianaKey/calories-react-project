@@ -25,7 +25,7 @@ const Card = (props:IDish & { addCalc: Function }) => {
             <div className="card-image">
                 <img src={ require(`../../assets/img/${props.photo}`) } alt={props.title} />
                 <span className="card-title">{props.title}</span>
-                <a className={classList} onClick={()=>{ props.addCalc(props.title) }}>
+                <a className={classList} onClick={()=>{ props.addCalc(props.id) }}>
                 <i className="material-icons">{val}</i>
                 </a>
             </div>
@@ -38,9 +38,9 @@ const Card = (props:IDish & { addCalc: Function }) => {
 }
 
 const mapDispatchToProps = (dispatch:any) => ({
-    addCalc(name:string) {
+    addCalc(id:number) {
         return (
-            dispatch(toggleItem(name))
+            dispatch(toggleItem(id))
         )
     }
 })
