@@ -1,19 +1,7 @@
 export const data = {
-  calc_options: {
-    man: {
-      active: 2400,
-      average: 2200,
-      lazy: 1800,
-    },
-    woman: {
-      active: 2000,
-      average: 1800,
-      lazy: 1600,
-    }
-  },
   dishes: [
     {
-      id: "0",
+      id: 0,
       title: "Pepperoni pizza",
       calories: 350,
       description: "Easy pizza crust, pizza crust yeast, pepperoni, quick pizza",
@@ -22,7 +10,7 @@ export const data = {
       calculated: false
     },
     {
-      id: "1",
+      id: 1,
       title: "Fried Potatos",
       calories: 312,
       description: "French fries, or simply fries, chips, finger chips, or French-fried potatoes, are batonnet or allumette-cut deep-fried potatoes.",
@@ -31,7 +19,7 @@ export const data = {
       calculated: false
     },
     {
-      id: "2",
+      id: 2,
       title: "Mixed Salad Greens",
       calories: 9,
       description: "5 cups loosely packed mixed greens or any favorite lettuce 5 cups loosely packed mixed greens or any favorite lettuce",
@@ -40,7 +28,7 @@ export const data = {
       calculated: false
     },
     {
-      id: "3",
+      id: 3,
       title: "Fried shrimps",
       calories: 277,
       description: "Fried shrimp or fried prawn is deep-fried shrimp and prawns.",
@@ -49,7 +37,7 @@ export const data = {
       calculated: false
     },
     {
-      id: "4",
+      id: 4,
       title: "Coffee without sugar",
       calories: 0,
       description: "Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species.",
@@ -60,7 +48,6 @@ export const data = {
 
   ],
   dayLimit: 0,
-  totalCalories:0,
   message: {
     itemAdded: "New item succesfully added!",
     itemDeleted: "Item successfully deleted!",
