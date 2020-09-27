@@ -1,9 +1,9 @@
 import {TOGGLE_ITEM, CHANGE_LIMIT} from './types'
 
-export function toggleItem(name:string){
+export function toggleItem(id:number){
     return {
         type: TOGGLE_ITEM,
-        payload: name
+        id: id
     }
 }
 
