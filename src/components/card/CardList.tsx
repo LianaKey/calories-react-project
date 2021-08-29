@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './Card'
+import CardImage from './CardImage'
 import { LargeForm } from './../calculator/CalcForm'
 import { connect } from 'react-redux'
 import { IDishes } from '../../interfaces/dishes'
@@ -9,9 +9,7 @@ const CardList:React.FC<IDishes> = (props:IDishes) => {
             <div className="row">
                 <div className="col s12 m6 cardlist flexlist mt1">
                     <h3 className="header" >Dishes and products</h3>
-                    {props.dishes.map((item, i) => {
-                        return (<Card {...item} key={i}/>)
-                    })}
+                    {props.dishes.map((item, i) => <CardImage {...item} key={i} />)}
                 </div>
                 <div className="col s12 m6 cardlist flexlist mt7">
                     <LargeForm />
