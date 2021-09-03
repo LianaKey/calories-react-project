@@ -1,12 +1,12 @@
 import React from "react"
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 import 'materialize-css/dist/css/materialize.min.css'
 import './assets/css/App.css'
-import {CalcPage, InfoPage, MorePage} from './pages'
-import Navigation from './components/Navigation'
+import { CalcPage, InfoPage, MorePage } from './pages'
+import { Navigation } from './components'
 import { rootReducer } from "./redux/rootReducer"
 import { data } from "./data/data"
 import { Container } from 'react-materialize'

@@ -1,15 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import { connect } from 'react-redux'
-import { toggleItem } from '../../redux/actions'
+import { useToggleItem } from '../../redux/actions'
 import { IDish } from '../../interfaces/dishes'
-
 import { Col, Card, CardTitle, Icon, Button } from 'react-materialize'
 
 let val: string = 'add';
 let color: string = 'blue';
 
-const CardImage = (props: IDish & { addCalc: Function }) => {
+const CardImage = (props: IDish) => {
 
   if (props.calculated) {
     val = 'remove';
@@ -21,6 +19,8 @@ const CardImage = (props: IDish & { addCalc: Function }) => {
 
   let defaultClass: string = 'btn-floating halfway-fab waves-effect waves-light';
   let classList: string = defaultClass.concat(' ', color);
+
+  const toggleItem = useToggleItem();
 
   return (
     <Col m={6}>
@@ -36,7 +36,7 @@ const CardImage = (props: IDish & { addCalc: Function }) => {
               large
               node="button"
               waves="light"
-              onClick={() => { props.addCalc(props.id) }}
+              onClick={() => { toggleItem(props.id) }}
             />
           </CardTitle>
         }
@@ -48,13 +48,4 @@ const CardImage = (props: IDish & { addCalc: Function }) => {
   )
 }
 
-const mapDispatchToProps = (dispatch: any) => ({
-  addCalc(id: number) {
-    return (
-      dispatch(toggleItem(id))
-    )
-  }
-})
-
-export default connect(null, mapDispatchToProps)(CardImage)
-// export default Card
+export default CardImage;

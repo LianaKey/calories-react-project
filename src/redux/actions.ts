@@ -1,15 +1,26 @@
-import {TOGGLE_ITEM, CHANGE_LIMIT} from './types'
+import { useDispatch } from 'react-redux'
+import { TOGGLE_ITEM, CHANGE_LIMIT } from './types'
 
-export function toggleItem(id:number){
-    return {
-        type: TOGGLE_ITEM,
-        id: id
-    }
+
+
+export function useToggleItem() {
+  const dispatch = useDispatch();
+  
+  return (id: number) => {
+    dispatch ({
+      type: TOGGLE_ITEM,
+      payload: id
+    })
+  }
 }
 
-export function changeLimit(number:number){
-    return {
-        type: CHANGE_LIMIT,
-        payload: number
-    }
+export function useChangeLimit() {
+  const dispatch = useDispatch();
+
+  return (number: number) => {
+    dispatch ({
+      type: CHANGE_LIMIT,
+      payload: number
+    })
+  }
 }

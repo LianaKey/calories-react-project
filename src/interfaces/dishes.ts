@@ -8,7 +8,6 @@ export interface IDish {
   calculated: boolean;
 }
   
-
 export interface IDishes {
-  dishes: Array<IDish>
+  dishes: IDish[]
 }

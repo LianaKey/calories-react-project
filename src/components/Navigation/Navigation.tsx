@@ -1,6 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-const Navigation:React.FC = () =>  {
+import { Link } from 'react-router-dom'
+
+export const Navigation:React.FC = () =>  {
     return (
         <nav>
             <div className="nav-wrapper amber darken-3 p2">
@@ -14,5 +15,3 @@ const Navigation:React.FC = () =>  {
         </nav>
     )
 }
-
-export default Navigation
