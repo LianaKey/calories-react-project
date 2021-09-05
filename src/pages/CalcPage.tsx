@@ -1,6 +1,6 @@
 import React from 'react'
-import CardList from '../components/card/CardList'
-import TopForm from './../components/form_limit/TopForm'
+import CardList from '../components/Card/CardList'
+import { TopForm } from './../components'
 import Title from '../components/Title'
 import { Toast } from 'react-materialize';
 

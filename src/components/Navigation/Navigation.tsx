@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Navigation:React.FC = () =>  {
+export const Navigation:React.FunctionComponent = () =>  {
     return (
         <nav>
             <div className="nav-wrapper amber darken-3 p2">

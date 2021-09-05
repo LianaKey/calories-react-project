@@ -1,2 +1,0 @@
-export const TOGGLE_ITEM = 'DISH/TOGGLE_ITEM';
-export const CHANGE_LIMIT = 'DISH/CHANGE_LIMIT';

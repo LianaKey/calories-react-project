@@ -1,6 +1,6 @@
 import React from 'react'
 import { useToggleItem } from '../../redux/actions'
-import {IDish} from '../../interfaces/dishes'
+import { IDish } from '../../interfaces'
 
 export const CalcItem = (props:IDish) => {
     const toggleItem = useToggleItem();

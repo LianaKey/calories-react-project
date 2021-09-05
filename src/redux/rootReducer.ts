@@ -1,13 +1,10 @@
 import { combineReducers } from 'redux'
-import { dishes } from './reducers/dishesReducer'
-import { dayLimit } from './reducers/limitReducer'
-import { message } from './reducers/messageReducer'
+import { dishReducer, limitReducer, messageReducer } from './reducers'
 
 export const rootReducer = combineReducers({
-    dishes,
-    dayLimit,
-    message
+  dishes: dishReducer,
+  limit: limitReducer,
+  message: messageReducer
 })
-
 
 export type RootState = ReturnType<typeof rootReducer>

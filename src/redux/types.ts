@@ -1,0 +1,4 @@
+export enum ActionType {
+    TOGGLE_ITEM = 'DISH/TOGGLE_ITEM',
+    CHANGE_LIMIT = 'DISH/CHANGE_LIMIT'
+}

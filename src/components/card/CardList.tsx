@@ -1,6 +1,6 @@
 import React from 'react'
-import CardImage from './CardImage'
-import { LargeForm } from './../calculator/CalcForm'
+import CardImage from '../Card/CardImage'
+import { CalcForm } from '../Calculator/CalcForm'
 import { connect } from 'react-redux'
 import { IDishes } from '../../interfaces/dishes'
 
@@ -12,7 +12,7 @@ const CardList: React.FC<IDishes> = (props: IDishes) => {
         {props.dishes.map((item, i) => <CardImage {...item} key={i} />)}
       </div>
       <div className="col s12 m6 cardlist flexlist mt7">
-        <LargeForm />
+        <CalcForm />
       </div>
     </div>
   )

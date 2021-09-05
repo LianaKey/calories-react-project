@@ -1,5 +1,5 @@
-import {IMessage} from '../../interfaces/reducers'
+import { IMessage } from '../../interfaces'
 
-export const message = (state: IMessage = {}, action?: any) => {
+export const messageReducer = (state: IMessage = {}, action?: any) => {
     return state
 }

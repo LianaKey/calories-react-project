@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import { useToggleItem } from '../../redux/actions'
 import { IDish } from '../../interfaces/dishes'

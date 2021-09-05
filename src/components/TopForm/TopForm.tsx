@@ -1,13 +1,9 @@
 import React from 'react'
-import { connect, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { IState } from '../../interfaces';
 import { useChangeLimit } from '../../redux/actions'
 
-interface ILimit {
-  dayLimit?: number
-}
-
-const TopForm:React.FunctionComponent<ILimit> = () => {
+export const TopForm:React.FunctionComponent = () => {
   const changeLimit = useChangeLimit();
   const { dayLimit } = useSelector((state:IState) => state);
 
@@ -20,5 +16,3 @@ const TopForm:React.FunctionComponent<ILimit> = () => {
     </div>
   )
 }
-
-export default TopForm
