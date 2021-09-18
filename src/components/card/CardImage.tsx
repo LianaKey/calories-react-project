@@ -1,5 +1,4 @@
 import React from 'react'
-import { useToggleItem } from '../../redux/actions'
 import { IDish } from '../../interfaces/dishes'
 import { Col, Card, CardTitle, Icon, Button } from 'react-materialize'
 
@@ -8,25 +7,17 @@ let color: string = 'blue';
 
 const CardImage = (props: IDish) => {
 
-  if (props.calculated) {
-    val = 'remove';
-    color = 'red';
-  } else {
-    val = 'add';
-    color = 'blue';
-  }
-
   let defaultClass: string = 'btn-floating halfway-fab waves-effect waves-light';
   let classList: string = defaultClass.concat(' ', color);
 
-  const toggleItem = useToggleItem();
-
   return (
-    <Col m={6}>
+    <Col m={3}>
       <Card
         header= {
-          <CardTitle image={require(`../../assets/img/${props.photo}`)}>
-            { props.title }
+          <>
+            <CardTitle image={props.strMealThumb}>
+              { props.strMeal }
+            </CardTitle>
             <Button
               key="1"
               className={classList}
@@ -35,13 +26,11 @@ const CardImage = (props: IDish) => {
               large
               node="button"
               waves="light"
-              onClick={() => { toggleItem(props.id) }}
             />
-          </CardTitle>
+          </>
         }
       >
-        <span className="calories"><strong>{props.calories} kcal</strong></span>
-        <p>{props.description}</p>
+        <p>{props.strInstructions}</p>
       </Card>
     </Col>
   )

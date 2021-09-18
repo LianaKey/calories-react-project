@@ -1,5 +1,3 @@
-import CalcPage from './CalcPage';
-import InfoPage from './InfoPage';
-import MorePage from './MorePage';
-
-export { CalcPage, InfoPage, MorePage };
+export { MainPage } from './main';
+export { InfoPage } from './info';
+export { MorePage } from './more';

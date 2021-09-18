@@ -1,6 +1,7 @@
 import { IDish } from "./dishes"
 
 export interface IState {
-  dishes: IDish[]
-  dayLimit: number
+  dishes: IDish[];
+  search: string;
+  message: string;
 }

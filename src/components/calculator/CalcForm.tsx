@@ -5,7 +5,7 @@ import { IState, IDish } from "../../interfaces"
 
 export const CalcForm: React.FC = () => {
 
-  const { dishes, dayLimit }: IState = useSelector((state: IState) => state);
+  const { dishes }: IState = useSelector((state: IState) => state);
   const [summ, setSumm] = useState(0);
   
   const calc = (items:IDish[]):number => {
@@ -21,12 +21,8 @@ export const CalcForm: React.FC = () => {
   return (
     <div className="col s12">
       <ul className="collection">
-        {dishes.map((item, i) => {
-          return (item.calculated) ? (<CalcItem {...item} key={i} />) : ''
-        })}
       </ul>
       <div className="row margin0 total p2">
-        <span className="to-left">Your day limit: <strong className="f20">{ dayLimit }</strong></span>
         <span className="to-right">In total: <strong className="f20">{ summ }</strong> calories.</span>
       </div>
     </div>

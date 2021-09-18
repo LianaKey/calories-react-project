@@ -1,6 +1,6 @@
-import { ActionType } from '../types'
+import { ActionType } from '../../types'
 
-export const limitReducer = (state: number = 0, action?: any) => {
+export const searchReducer = (state = '', action?: any) => {
   switch (action.type) {
     case ActionType.CHANGE_LIMIT:
       return action.payload

@@ -47,7 +47,7 @@ export const data = {
     },
 
   ],
-  dayLimit: 0,
+  search: '',
   message: {
     itemAdded: "New item succesfully added!",
     itemDeleted: "Item successfully deleted!",
