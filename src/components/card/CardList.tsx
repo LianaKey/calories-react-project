@@ -1,25 +1,22 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { IDish, IDishes } from '../../interfaces/dishes'
-import { List, Radio } from 'antd'
-import Card from './Card'
+import React, { useMemo } from 'react';
+import { connect } from 'react-redux';
+import { IDishes } from '../../interfaces/dishes';
+import { List, Radio } from 'antd';
+import Card from './Card';
+import { useSortBy } from '../../redux/reducers/sorting/actions';
+import { collectCats, sortingProcessor } from './utils';
 
-const CardList: React.FC<IDishes> = (props: IDishes) => {
+const CardList: React.FC<IDishes & {cat: string}> = (props: IDishes & {cat: string}) => {
 
-  function collectCats(dishes: any) {
-    return dishes.reduce((outcome: string[], accum: IDish) => {
-      !outcome.includes(accum.strCategory) && outcome.push(accum.strCategory)
-      return outcome
-    }
-      , [])
-  }
-  const cats = collectCats(props.dishes);
+  const sort = useSortBy('CATNAME');
+  const cats = useMemo(()=> collectCats(props.dishes), [props.dishes]);
+  const sorted = sortingProcessor(props.dishes, props.cat);
 
   return (
     <>
       <Radio.Group style={{marginBottom: '25px'}}>
         {cats.map((cat: string) => (
-          <Radio.Button value={cat}>{cat}</Radio.Button>
+          <Radio.Button key={cat} value={cat} onClick={()=>sort(cat)}>{cat}</Radio.Button>
         ))}
       </Radio.Group>
       <List
@@ -32,9 +29,9 @@ const CardList: React.FC<IDishes> = (props: IDishes) => {
           xl: 6,
           xxl: 3,
         }}
-        dataSource={props.dishes}
+        dataSource={sorted}
         renderItem={dish => (
-          <List.Item>
+          <List.Item key={dish.idMeal}>
             <Card {...dish} />
           </List.Item>
         )
@@ -45,7 +42,8 @@ const CardList: React.FC<IDishes> = (props: IDishes) => {
 }
 
 const mapStateToProps = (state: any) => ({
-  dishes: state.dishes
+  dishes: state.dishes,
+  cat: state.sorting
 })
 
 // export default React.memo(connect(mapStateToProps)(CardList));
