@@ -8,7 +8,7 @@ import './assets/css/App.css'
 import 'antd/dist/antd.css';
 import { MainPage, InfoPage, MorePage } from './pages'
 import { Navigation } from './components'
-import { rootReducer } from "./redux/reducers/rootReducer"
+import { rootReducer } from "./redux/reducers/"
 import { Container } from 'react-materialize'
 import { hot } from 'react-hot-loader'
 

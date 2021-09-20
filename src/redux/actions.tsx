@@ -32,19 +32,6 @@ export function useSearch() {
   }
 }
 
-export function useSort(dishes:IDishes) {
-  const dispatch = useDispatch();
-
-  
-  
-  return (input: string) => {
-    dispatch ({
-      type: ActionType.SORT_BY_CATNAME,
-      payload: input
-    })
-  }
-}
-
 const mapRequests = {
   latest: 'latest',
   search: 'search'
