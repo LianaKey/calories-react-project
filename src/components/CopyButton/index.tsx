@@ -11,7 +11,6 @@ export const useLogin = () => {
         .get<any>(`https://jsonplaceholder.typicode.com/users/${id}`)
         .then((res:any) => {
           if (res.data) {
-            const isAdmin = res.data.id === 10 ? true : false
             history.push('./home')
             alert('login success')
           } else {

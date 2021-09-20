@@ -1,5 +1,5 @@
 import { Dishes } from './actions';
-import { IDish } from '../../../interfaces/dishes';
+import { IDish } from '../../interfaces/dishes';
 
 type Action<T> = {
   type: string | undefined;
