@@ -1,16 +1,21 @@
 import React, { useMemo } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { IDishes } from '../../interfaces/dishes';
 import { List, Radio } from 'antd';
 import Card from './Card';
 import { useSortBy } from '../../redux/reducers/sorting/actions';
 import { collectCats, sortingProcessor } from './utils';
 
-const CardList: React.FC<IDishes & {cat: string}> = (props: IDishes & {cat: string}) => {
+interface CardList extends IDishes {
+  sorting: {}
+}
+
+const CardList: React.FC = () => {
+  const {dishes, sorting} = useSelector((state:CardList) => state)
 
   const sort = useSortBy('CATNAME');
-  const cats = useMemo(()=> collectCats(props.dishes), [props.dishes]);
-  const sorted = sortingProcessor(props.dishes, props.cat);
+  const cats = useMemo(()=> collectCats(dishes), [dishes]);
+  const sorted = useMemo(()=> sortingProcessor(dishes, sorting), [dishes, sorting]);
 
   return (
     <>
@@ -41,10 +46,4 @@ const CardList: React.FC<IDishes & {cat: string}> = (props: IDishes & {cat: stri
   )
 }
 
-const mapStateToProps = (state: any) => ({
-  dishes: state.dishes,
-  cat: state.sorting
-})
-
-// export default React.memo(connect(mapStateToProps)(CardList));
-export default connect(mapStateToProps)(CardList);
+export default CardList;
