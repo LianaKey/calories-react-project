@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { IDishes } from "../../../interfaces";
 
 export enum SortBy {
     CATNAME = 'SORT_BY_CATNAME',

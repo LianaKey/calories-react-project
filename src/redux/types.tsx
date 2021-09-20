@@ -1,5 +1,0 @@
-export enum ActionType {
-    TOGGLE_ITEM = 'TOGGLE_ITEM',
-    CHANGE_LIMIT = 'CHANGE_LIMIT',
-    FETCH_DISHES = 'FETCH_DISHES',
-}

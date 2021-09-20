@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { CalcItem } from './CalcItem'
 import { useSelector } from 'react-redux'
 import { IState, IDish } from "../../interfaces"
 

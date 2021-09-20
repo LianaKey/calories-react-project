@@ -1,5 +1,5 @@
-import { ActionType } from '../../types'
-import { IDish } from '../../../interfaces/dishes'
+import { Dishes } from './actions';
+import { IDish } from '../../../interfaces/dishes';
 
 type Action<T> = {
   type: string | undefined;
@@ -10,7 +10,7 @@ type dishReducer<T> = (state: T, action?: Action<any>) => T;
 
 export const dishReducer = (state:IDish[] = [], action:any) => {
   switch (action.type) {
-    case ActionType.FETCH_DISHES:
+    case Dishes.FETCH_DISHES:
       return action.payload
     default:
       return state

@@ -12,7 +12,6 @@ import { rootReducer } from "./redux/reducers/"
 import { Container } from 'react-materialize'
 import { hot } from 'react-hot-loader'
 
-
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;

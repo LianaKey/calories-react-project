@@ -3,18 +3,19 @@ import { useSelector } from 'react-redux';
 import { IDishes } from '../../interfaces/dishes';
 import { List, Radio } from 'antd';
 import Card from './Card';
-import { useSortBy } from '../../redux/reducers/sorting/actions';
+import { useSortBy } from '../../redux/sorting/actions';
 import { collectCats, sortingProcessor } from './utils';
 
 interface CardList extends IDishes {
   sorting: {}
 }
 
-const CardList: React.FC = () => {
+export const CardList: React.FC = () => {
   const {dishes, sorting} = useSelector((state:CardList) => state)
 
   const sort = useSortBy('CATNAME');
   const cats = useMemo(()=> collectCats(dishes), [dishes]);
+  console.dir(dishes);
   const sorted = useMemo(()=> sortingProcessor(dishes, sorting), [dishes, sorting]);
 
   return (
@@ -45,5 +46,3 @@ const CardList: React.FC = () => {
     </>
   )
 }
-
-export default CardList;
