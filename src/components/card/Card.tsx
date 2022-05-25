@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { IDish } from "../../interfaces";
-import { Card as AntCard } from "antd";
+import React, { useState } from 'react'
+import { IDish } from '../../interfaces'
+import { Card as AntCard } from 'antd'
 
 const Card = function (dish: IDish) {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false)
 
   return (
     <AntCard
@@ -13,7 +13,7 @@ const Card = function (dish: IDish) {
     >
       {dish.strCategory}
     </AntCard>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

@@ -1,5 +1,5 @@
-import React from "react";
-import { IDish } from "../../interfaces";
+import React from 'react';
+import { IDish } from '../../interfaces';
 
 export const CalcItem = (props: IDish) => {
   return (
