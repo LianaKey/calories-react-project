@@ -3,10 +3,10 @@ import { Search, CardList } from '../../components';
 import { useFetchDish } from '../../redux/dish/actions';
 
 const MainPage = () => {
-  const fetchDishes = useFetchDish('search', { s: 'a' });
+  const fetchDishes = useFetchDish('search');
 
   useEffect(() => {
-    fetchDishes();
+    fetchDishes({ s: 'a' });
   }, []);
 
   return (

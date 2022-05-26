@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
+import { debounce } from 'lodash';
 import { useFetchDish } from '../../redux/dish/actions';
-import _ from 'lodash';
 
-export const Search: React.FunctionComponent = () => {
+export const Search: React.FC = () => {
   const [search, setSearch] = useState('');
-  const fetchDish = useFetchDish('search', { s: search });
-  const debaunceFetch = React.useMemo(() => {
-    console.log('debaunce fired');
-    return _.debounce(fetchDish, 500);
-  }, []);
+  const debouncedFetch = React.useCallback(
+    debounce(useFetchDish('search'), 500),
+    []
+  );
 
-  const onChangeHandler = (event: any) => {
-    setSearch(event.target.value);
-    debaunceFetch();
+  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.currentTarget.value);
+    debouncedFetch({ s: search });
   };
 
   return (
